@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/hibernate1</property>
+        <property name="connection.username">hibernate1</property>
+        <property name="connection.password">hibernate1</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.show_sql">true</property>
+
+        <!--mapping resource="com.fpmislata.daw.hibernateex1.persistencia/profesor.hbm.xml"/-->
+        <!--mapping class="com.fpmislata.daw.hibernateex1.Profesor"/-->
+        <mapping class="com.fpmislata.daw.hibernateex1.Direccion"/>
+        <!--mapping class="com.fpmislata.daw.hibernateex1.Modulo"/-->
+        <!--mapping class="com.fpmislata.daw.hibernateex1.CorreoElectronico"/-->
+        
+        <!--mapping resource="com/fpmislata/daw/hibernateex1/persistencia/correoelectronico.hbm.xml"/-->
+        
+        <mapping resource="com/fpmislata/daw/hibernateex1/persistencia/modulo.hbm.xml"/>
+        <mapping resource="com/fpmislata/daw/hibernateex1/persistencia/profesor.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>
