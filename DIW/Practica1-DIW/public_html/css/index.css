@@ -1,0 +1,140 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 6, 2014, 10:28:02 AM
+    Author     : eslem
+*/
+html{
+    width: 100%;
+    background-color: #fcc76b;
+}
+*, *:after, *:before {
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+}
+
+body{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    color:#580101;
+    font-family:sans-serif;
+}
+
+header{
+    width:100%;
+    text-align: center;
+    background-image: url("../images/header.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:410px;
+    margin:0px;
+    position:relative;    
+}
+
+header h1{
+    margin-top: 150px;
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width:90%;
+}
+
+header h2{
+    margin-top: 200px;
+    position:absolute;
+    width:90%;
+}
+
+
+div.content{
+    background-color: #ffffff;
+    display:inline-block;
+    width: 100%;
+}
+
+nav.menu{
+    width:15%;
+    display:inline-block;
+    background-color: #664800;
+    border:solid thick #986c00;
+
+}
+nav.menu a{
+    text-decoration: none;
+    width:100%;
+    display: block;
+    color:#ffffff;
+    font-weight: bold;
+    padding:2px;
+    padding-left: 7px;  
+}
+
+nav.menu a:hover{
+    background-color: #cc4a4a;
+    color:#580101;
+    border-left: solid thick #580101;
+}
+
+div.form{
+    width: 85%;
+    display:inline-block;
+    float:right;
+    padding-left: 10px;
+}
+
+div.form form{
+    width:50%;
+}
+
+div.form:after{
+    clear: both;
+}
+
+div.form label, div.form input{
+    display: block;
+    margin-right: 70px;
+}
+
+
+div.form input:focus{
+    border-color:#986c00;
+    background-color:#fcc76b;
+}
+
+div.form input:hover, div.form button:hover{
+    border-color:#986c00;
+}
+
+div.form label{
+    margin-top: 5px;
+}
+
+div.form form{
+    display:inline-block;
+}
+
+div.form button{
+    margin:15px 0px;
+}
+
+footer{
+    width: 100%;    
+    background-color: #bd9266;
+    text-align: center;
+}
+
+footer b{
+    display:inline-block;
+    margin: 1px;
+
+}
