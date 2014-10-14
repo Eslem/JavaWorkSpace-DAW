@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <project name="AntTest" default="main" basedir=".">
+    
   <!-- Sets variables which can later be used. -->
   <!-- The value of a property is accessed via ${} -->
   <property name="src.dir" location="anttest" />
@@ -12,11 +13,13 @@
     <delete dir="${build.dir}" />
     <delete dir="${docs.dir}" />
     <delete dir="${dist.dir}" />
+    <delete dir="${build.dir}/antTasks" />
   </target>
 
   <!-- Creates the  build, docs and dist directory-->
   <target name="makedir">
     <mkdir dir="${build.dir}" />
+    <mkdir dir="${build.dir}/antTasks" />
     <mkdir dir="${docs.dir}" />
     <mkdir dir="${dist.dir}" />
   </target>
@@ -25,7 +28,9 @@
   <target name="compile" depends="clean, makedir">
     <javac srcdir="${src.dir}" destdir="${build.dir}">
     </javac>
-
+    
+    <javac srcdir="antTasks" destdir="${build.dir}/antTasks">
+    </javac>
   </target>
 
   <!-- Creates Javadoc -->
@@ -40,14 +45,20 @@
 
   <!--Creates the deployable jar file  -->
   <target name="jar" depends="compile">
-    <jar destfile="${dist.dir}\de.vogella.build.test.ant.jar" basedir="${build.dir}">
+    <jar destfile="${dist.dir}\testant.jar" basedir="${build.dir}">
       <manifest>
         <attribute name="Main-Class" value="test.Main" />
       </manifest>
     </jar>
   </target>
+  
+  <taskdef name="mytask" classname="antTasks.MyAntTask" classpath="${build.dir}/antTasks/"/>
 
-  <target name="main" depends="compile, jar, docs">
+  <target name="own">
+    <mytask/>
+  </target>
+
+  <target name="main" depends="compile, jar, docs, own">
     <description>Main target</description>
   </target>
 
